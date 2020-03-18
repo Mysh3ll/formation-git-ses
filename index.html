@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Formation GIT</title>
+    	<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/custom.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img class="logo-git" src="images/git.png" alt="logo-git"/>
+					<br /><br />
+
+					<ul class="list-summary">
+						<li><h3 ><a href="#">&#62; Partie 1</a></h3></li>
+						<li><h3 ><a href="#">&#62; Partie 2</a></h3></li>
+						<li><h3 ><a href="#">&#62; Partie 3</a></h3></li>
+					</ul>
+
+					<br /><br />
+					<p>
+						<a href="https://www.safran-group.com/fr">
+							<img src="images/logo-safran.png" height="100px" >
+						</a>
+					</p>
+				</section>
+				<!-- END Section -->
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				margin: 0.1,
+				width: 1680,
+				height: 1050,
+				hash: true,
+				slideNumber: true,
+				transition: 'convex',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
