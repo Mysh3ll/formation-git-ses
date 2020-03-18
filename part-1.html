@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Formation GIT - Partie 1</title>
+    	<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="images/git.png" alt="logo-git"/>
+					<p>
+						<a href="https://www.safran-group.com/fr">
+							<img src="images/logo-safran.png" height="100px" >
+						</a>
+					</p>
+				</section>
+				<!-- END Section -->
+
+
+
+				<section data-background="#080d2a" data-background-transition="zoom">
+					<h2>Le versioning (en bref ...)</h2>
+
+					<h5 class="fragment text-left">1. Historique des modifications (application, document, présentation)</h5>
+					<ul>
+						<li class="fragment">➔ Quoi / Qui / Quand / Pourquoi ?</li>
+						<li class="fragment">➔ Annuler</li>
+					</ul>
+
+
+					<h5 class="fragment text-left">2. Travail en équipe</h5>
+					<ul>
+						<li class="fragment">➔ Ne pas écraser le travail</li>
+						<li class="fragment">➔ Suivre l'historique</li>
+						<li class="fragment">➔ Partager / Déployer</li>
+					</ul>
+				</section>
+				<!-- END Section -->
+
+
+
+				<section data-background="#080d2a" data-background-transition="zoom">
+					<h2>Qu'est-ce que GIT ?</h2>
+					<ul>
+						<li class="fragment">Créé en 2005 par Linus Torvald</li>
+						<li class="fragment">Objectifs : palier aux défauts des autres outils</li>
+						<li class="fragment">➔ Performant (rapide et puissant)</li>
+						<li class="fragment">➔ Distribué (<b>≠</b> SVN)</li>
+						<li class="fragment">➔ Support travail non linéaire (branches)</li>
+					</ul>
+				</section>
+				<!-- END Section -->
+
+
+
+				<section data-background="#28498c" data-background-transition="zoom">
+					<h2>Pourquoi vous avez besoin de GIT dans votre vie ?</h2>
+
+					<h5 class="fragment text-left">1. Peu importe votre métier : vous allez le rencontrer</h5>
+					<ul>
+						<li class="fragment">➔ Développement / Scripting</li>
+						<li class="fragment">➔ Administration (Gitlab, serveurs prod...)</li>
+						<li class="fragment">➔ Déploiement</li>
+					</ul>
+					<br /><br />
+					<h5 class="fragment text-left">2. Utilisé partout</h5>
+
+					<br />
+					<h5 class="fragment text-left">3. Incroyable</h5>
+					<ul>
+						<li class="fragment">➔ Commits locaux (tester, sauvegarder, tester...)</li>
+						<li class="fragment">➔ Une branche par fonctionnalité</li>
+						<li class="fragment">➔ Un historique clair et soigné</li>
+					</ul>
+				</section>
+				<!-- END Section -->
+
+
+				<section data-background="#080d2a" data-background-transition="zoom">
+					<h2>Objectifs de cette formation</h2>
+					<ul>
+						<li class="fragment">Présenter la philosophie de GIT<br />➔ Pas exhaustif</li>
+						<li class="fragment">Des clés pour commencer <br />➔ Utiliser GIT sur vos projets</li>
+						<li class="fragment">Initialiser les bonnes pratiques</li>
+					</ul>
+
+					<br /><br />
+					<h5 class="fragment" style="color:red;">Are you ready ?</h5>
+				</section>
+				<!-- END Section -->
+
+
+				<section data-background="#28498c" data-background-transition="zoom">
+					<h2>I. Un peu de théorie</h2>
+				</section>
+				<!-- END Section -->
+
+
+				<section data-transition="zoom">
+					<h2>1. Modèle distribué</h2>
+					<img src="images/distributed.png"/>
+
+					<h3>Fonctionnement avec un repo central (Gitlab)</h3>
+					<img src="images/distributed_central_repo.png" />
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h2>2. Les zones de travail <u>en local</u></h2>
+					<img src="images/git-workspaces.png" />
+
+					<br />
+					<ul>
+						<li>Working directory : Fichiers modifiés (dans éditeur)</li>
+						<li>Staging area : Index prêt à faire parti du prochain commit</li>
+						<li>Git repository : Base de données des commits</li>
+					</ul>
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h2>2. Les zones de travail <u>en local</u></h2>
+					<img src="images/git-workspaces-workflow.png" />
+				</section>
+				<!-- END Section -->
+
+
+				<section >
+					<h2>3. Statut</h2>
+
+					<code class="hljs bash">git status</code>
+					État actuel du 'staging' (bleu) et du 'working directory' (vert)
+					<img src="images/git-status.png" />
+
+					<br />
+					<pre><code data-trim data-noescape class="hljs bash">
+							# Commits dans le 'Git repository'
+							git log
+
+							# Personnalisable
+							git log --graph --decorate --pretty=oneline --abbrev-commit --all
+						</code></pre>
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h2>4. Les commits</h2>
+					<img src="images/minions.jpg" />
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h2>4. Les commits</h2>
+
+					<h5> Un commit =</h5>
+					<ul>
+						<li>Meta-données : identifiant sha1, auteur, date</li>
+						<li>Référence vers le(s) commit(s) parent(s)</li>
+						<li>Snapshot des fichiers modifiés</li>
+					</ul>
+
+					<pre><code data-trim data-noescape class="hljs plain">
+					commit bdae142eea5d9cb85ba89dd913c48c28556cfe15
+					Author: Mysh3ll <peacefulloijkn@gmail.com>
+					Date:   Wed Mar 18 22:06:13 2020 +0100
+
+					Init project formation git
+
+					Debut du projet de formation git
+					</code></pre>
+
+					<img src="images/git-commits.png"/>
+					<br /><br />
+
+					<h5>Un commit est local (≠ SVN)</h5>
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h2>5. Les branches (en très bref)</h2>
+					<img src="images/baobab.jpg" />
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h2>5. Les branches (en très bref)</h2>
+
+
+					<h4>Branche = étiquette pointant un commit</h4>
+					<img src="images/git-branches.png"/>
+					<br /><br />
+
+					<ul>
+						<li>Une feature / Un fix / Un POC &#8594; Une branche</li>
+						<li>Rapide et pratique</li>
+						<li>Facilite le partage</li>
+						<li>Usez et abusez des branches</li>
+					</ul>
+
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h4>Particularités</h4>
+					<ul>
+						<li><code>`master`</code> : Branche principale (convention)</li>
+						<li><code>`HEAD`</code> : Branche locale sur laquelle on se trouve</li>
+					</ul>
+					<br /><br />
+
+					<img src="images/branch-head.png"/>
+				</section>
+				<!-- END Section -->
+
+
+
+				<!---------------
+
+						PRATIQUE
+
+				--------------->
+
+
+				<section data-background="#28498c" data-background-transition="zoom">
+					<h2>II. Un peu de pratique</h2>
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h2>1. Configurer son profil git</h2>
+
+					<h4>~/.gitconfig</h4>
+
+					<pre><code data-trim data-noescape class="hljs ini">
+					[user]
+					name = Mysh3ll
+					email = peacefulloijkn@gmail.com
+
+					[alias]
+					ci = commit
+					co = checkout
+					st = status
+					br = branch
+
+					[remote "origin"]
+					url = https://github.com/Mysh3ll/formation-git-ses.git
+					fetch = +refs/heads/*:refs/remotes/origin/*
+
+					[push]
+					default = simple
+					</code></pre>
+
+					<blockquote>
+						<b>.gitconfig</b> / <b>.gitignore</b> peuvent être définis de manière globale <br />+ spécifiques au projet
+					</blockquote>
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h2>2. Initialiser un dépôt</h2>
+
+					<pre><code data-trim data-noescape class="hljs bash">
+						cd mon-projet
+
+						# Ce projet sera maintenant géré par GIT
+						git init
+						# Création d'un commit vide "First commit"
+						git ci --allow-empty
+
+						# ...Je commence à bosser
+					</code></pre>
+
+					<h4>Ou depuis un dépôt existant</h4>
+					<pre><code data-trim data-noescape class="hljs bash">
+						# On récupère le projet existant
+						git clone https://github.com/Mysh3ll/formation-git-ses.git mon-projet
+						# .. ou bien
+						git clone git@github.com:Mysh3ll/formation-git-ses.git mon-projet
+
+						cd mon-projet
+						# ...Je commence à bosser
+					</code></pre>
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h2>3. Premières modifications</h2>
+
+					<pre><code data-trim class="hljs bash">
+						# Créer une branche (co = checkout)
+						git co -b ma-branche
+
+						# Créer un nouveau fichier (ci = commit)
+						git add nouveau-fichier.txt
+						git ci
+
+						# Supprimer ce fichier et modifier le précédent commit
+						rm -f nouveau-fichier.txt
+						git add nouveau-fichier.txt
+						git ci --amend
+					</code></pre>
+
+					<br />
+					<h5>Pratique</h5>
+					<ol>
+						<li>Créer un fichier texte dans un commit</li>
+						<li>Ajouter du texte dans ce fichier => commit</li>
+						<li>Effectuer une correction dans le fichier => commit</li>
+					</ol>
+				</section>
+				<!-- END Section -->
+
+
+				<section>
+					<h2>4. Partager son travail</h2>
+
+
+					<pre><code data-trim data-noescape class="hljs bash">
+						# Récupère l'état du dépôt distant
+						git fetch origin
+
+						git push origin -u my-branch:mp-my-branch-renamed
+					</code></pre>
+
+					<br />
+					<h5>Pratique</h5>
+					<ul>
+						<li>Envoyer sa jolie branche sur le dépôt distant</li>
+						<li>Mettre les initiales dans le nom de la branche</li>
+					</ul>
+				</section>
+				<!-- END Section -->
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				margin: 0.1,
+				width: 1680,
+				height: 1050,
+				hash: true,
+				slideNumber: true,
+				transition: 'convex',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

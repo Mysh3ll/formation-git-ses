@@ -11,3 +11,7 @@
 .reveal section ul.list-summary {
     list-style-type: none;
 }
+
+.text-left {
+    text-align: left;
+}
