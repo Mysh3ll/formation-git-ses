@@ -54,3 +54,7 @@
 .text-left {
     text-align: left;
 }
+
+.reveal section pre {
+    box-shadow: none;
+}

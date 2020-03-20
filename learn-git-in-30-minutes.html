@@ -112,8 +112,10 @@
                 <h5 class="fragment text-left">L'installation de Git sur votre machine est simple:</h5>
                 <ul>
                     <li class="fragment">➔ Linux - Ouvrez simplement un nouveau terminal et installez git via le
-                        gestionnaire de paquets de votre distribution. Pour Ubuntu, la commande est: <code
-                                class="hljs bash">sudo apt-get install git</code>
+                        gestionnaire de paquets de votre distribution. Pour Ubuntu, la commande est:
+                        <code class="hljs bash">
+                            sudo apt-get install git
+                        </code>
                     </li>
                     <li class="fragment">➔ Windows - nous recommandons <a href="https://git-for-windows.github.io/">git
                         pour windows</a> car il offre à la fois un client GUI et un émulateur de ligne de commande BASH.
@@ -123,17 +125,46 @@
                     </li>
                 </ul>
             </section>
-			<section>
-				<p>
-					Si vous êtes un débutant absolu, un client graphique git est un must. Nous
-					recommandons <a href="https://tortoisegit.org/download/">TortoiseGit</a>, mais il existe de
-					nombreux autres bons et gratuits en ligne.
-					Connaître les commandes de base de git est toujours important même si vous utilisez une
-					application GUI, donc pour le reste de cette leçon, ce sera notre seul objectif.
-				</p>
-			</section>
+            <section>
+                <p>
+                    Si vous êtes un débutant absolu, un client graphique git est un must. Nous
+                    recommandons <a href="https://tortoisegit.org/download/">TortoiseGit</a>, mais il existe de
+                    nombreux autres bons et gratuits en ligne.
+                    Connaître les commandes de base de git est toujours important même si vous utilisez une
+                    application GUI, donc pour le reste de cette leçon, ce sera notre seul objectif.
+                </p>
+            </section>
+            <!-- END Installer Git -->
+
+            <section>
+                <h2>2. Configurer Git</h2>
+
+                <p class="fragment">
+                    Maintenant que nous avons installé git sur notre ordinateur, nous devrons ajouter quelques
+                    configurations rapides. Il existe de nombreuses options qui peuvent être manipulées, mais nous
+                    allons configurer les plus importantes: notre <b>nom d'utilisateur</b> et notre <b>adresse
+                    e-mail</b>. Ouvrez un
+                    terminal et exécutez ces commandes:
+
+				<pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+						# Configuration du nom d'utilisateur
+						git config --global user.name "My Name"
+
+						# Configuration de l'adresse e-mail
+						git config --global user.email myEmail@example.com
+					</code>
+				</pre>
+                </p>
+
+                <p class="fragment">
+                    Chaque action que nous faisons dans Git aura désormais un tampon avec notre nom et notre adresse. De
+                    cette façon, les utilisateurs savent toujours qui a fait quoi et tout est beaucoup plus organisé.
+                </p>
+            </section>
+            <!-- END Configurer Git -->
         </section>
-        <!-- END Section -->
+        <!-- END Section Les bases-->
 
     </div>
 
