@@ -1,4 +1,35 @@
-.reveal section img {
+.frame-safran {
+    /* position: relative; */
+    /* top: 10px; */
+    /* left: 10px; */
+    /* width: 95%; */
+    height: 95vh;
+    border: 10px solid #014491;
+    margin: 10px;
+}
+
+.frame-safran-middle {
+    /* position: relative; */
+    /* top: -10px; */
+    /* left: 100px; */
+    width: 250PX;
+    height: 50px;
+    border: 10px solid #014491;
+    margin: -10px auto auto;
+}
+
+.footer {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    bottom: -20px;
+    left: 30px ;
+    z-index: 10;
+    color: #014491;
+    text-align: center;
+}
+
+.reveal section img, .reveal .footer img {
     background: none;
     border: none;
     box-shadow: none;
@@ -6,6 +37,14 @@
 
 .reveal section img.logo-git {
     width: 20%;
+}
+
+.logo-safran {
+    height: 40px;
+    margin: -30px auto;
+}
+.footer-text p{
+    font-size: x-small;
 }
 
 .reveal section ul.list-summary {
