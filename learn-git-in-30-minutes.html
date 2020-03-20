@@ -146,7 +146,7 @@
                     e-mail</b>. Ouvrez un
                     terminal et exécutez ces commandes:
 
-				<pre class="fragment">
+                <pre class="fragment">
 					<code data-trim data-noescape class="hljs bash">
 						# Configuration du nom d'utilisateur
 						git config --global user.name "My Name"
@@ -163,9 +163,77 @@
                 </p>
             </section>
             <!-- END Configurer Git -->
+
+            <section>
+                <h2>3. Créer un nouveau dépôt</h2>
+
+                <p class="fragment">
+                    Comme nous l'avons mentionné précédemment, git stocke ses fichiers et son historique directement
+                    sous forme de dossier dans votre projet. Pour configurer un nouveau référentiel, nous devons ouvrir
+                    un terminal, accéder à notre répertoire de projet et exécuter:
+                    <code class="hljs bash">
+                        git init
+                    </code>
+                </p>
+                <br/><br/>
+                <p class="fragment">
+                    Cela activera Git pour ce dossier particulier et créera un répertoire <b>.git</b> caché où
+                    l'historique et la configuration du dépôt seront stockés.
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+					Créez un dossier sur votre bureau appelé <b>git_exercice</b>, ouvrez un nouveau terminal et entrez les
+                    informations suivantes:
+                </p>
+
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+						# Ouverture du dossier
+						cd Desktop/git_exercice/
+
+						# Création du nouveau dépôt
+						git init
+					</code>
+				</pre>
+
+                <p class="fragment">
+                    La ligne de commande doit répondre par quelque chose comme:
+                </p>
+				<pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+						Initialized empty Git repository in /home/user/Desktop/git_exercise/.git/
+					</code>
+				</pre>
+                <p class="fragment">
+                    Cela signifie que notre dépôt a été créé avec succès mais qu'il est toujours vide. Créez maintenant
+                    un fichier texte appelé <b>hello.txt</b> et enregistrez-le dans le dossier git_exercice.
+                </p>
+            </section>
+            <!-- END Créer un nouveau dépôt -->
         </section>
         <!-- END Section Les bases-->
 
+		<section data-background-transition="zoom">
+			<section>
+				<h2>2. Les dépôts distants</h2>
+			</section>
+		</section>
+		<!-- END Section Les dépôts distants-->
+
+		<section data-background-transition="zoom">
+			<section>
+				<h2>3. Les branches</h2>
+			</section>
+		</section>
+		<!-- END Section Les branches-->
+
+		<section data-background-transition="zoom">
+			<section>
+				<h2>4. Notions avancées</h2>
+			</section>
+		</section>
+		<!-- END Section Notions avancées-->
     </div>
 
     <div class="footer">
