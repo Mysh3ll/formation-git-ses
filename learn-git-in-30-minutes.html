@@ -91,7 +91,8 @@
                     Git est une collection d'utilitaires de ligne de commande qui suivent et enregistrent les
                     modifications dans les fichiers (le plus souvent le code source, mais vous pouvez suivre tout ce que
                     vous souhaitez). Avec lui, vous pouvez restaurer les anciennes versions de votre projet, comparer,
-                    analyser, fusionner les modifications et plus encore. Ce processus est appelé contrôle de version.
+                    analyser, fusionner les modifications et plus encore. Ce processus est appelé <b>contrôle de
+					version</b>.
                     Il existe un certain nombre de systèmes de contrôle de version qui font ce travail. Vous avez
                     peut-être entendu certains d'entre eux - SVN, Mercurial, Perforce, CVS, Bitkeeper et plus encore.
                 </p>
@@ -175,7 +176,7 @@
                         git init
                     </code>
                 </p>
-                <br/><br/>
+                <br/>
                 <p class="fragment">
                     Cela activera Git pour ce dossier particulier et créera un répertoire <b>.git</b> caché où
                     l'historique et la configuration du dépôt seront stockés.
@@ -218,7 +219,8 @@
 
                 <p class="fragment">
                     Git status est une autre commande incontournable qui renvoie des informations sur l'état actuel du
-                    dépôt: tout est à jour, ce qui est nouveau, ce qui a changé, etc. L'exécution de <b>git status</b>
+                    dépôt: tout est à jour, ce qui est nouveau, ce qui a changé, etc. L'exécution de <code
+                        class="git-command">git status</code>
                     dans notre dépôt nouvellement créé devrait renvoyer ce qui suit:
                 </p>
                 <pre class="fragment">
@@ -236,14 +238,67 @@
 					</code>
 				</pre>
             </section>
-			<section>
-				<p>
-					Le message renvoyé indique que <b>hello.txt</b> n'est pas suivi. Cela signifie que le fichier est nouveau
-					et Git ne sait pas encore s'il doit garder une trace des modifications apportées à ce fichier ou
-					simplement l'ignorer. Pour accuser réception du nouveau fichier, nous devons le mettre dans l'<b>Index (stage)</b>.
-				</p>
-			</section>
+            <section>
+                <p>
+                    Le message renvoyé indique que <b>hello.txt</b> n'est pas suivi. Cela signifie que le fichier est
+                    nouveau
+                    et Git ne sait pas encore s'il doit garder une trace des modifications apportées à ce fichier ou
+                    simplement l'ignorer. Pour accuser réception du nouveau fichier, nous devons le mettre dans l'<b>Index
+                    (stage)</b>.
+                </p>
+            </section>
             <!-- END Vérifier le status-->
+
+            <section>
+                <h2>5. Staging</h2>
+
+                <p class="fragment">
+                    Git a le concept de "zone de transit". Vous pouvez penser à cela comme un sac vide, qui
+                    contient les modifications que vous souhaitez valider. Il commence vide, mais vous pouvez y ajouter
+                    des fichiers (ou même des lignes simples et des parties de fichiers) avec la commande <code
+                        class="git-command">git
+                    add</code>, et
+                    enfin tout valider (créer un instantané) avec <code class="git-command">git commit</code>.
+                </p>
+                <p class="fragment">
+                    Dans notre cas, nous n'avons qu'un seul fichier alors ajoutons le:
+                </p>
+                <code class="fragment hljs bash">
+                    git add hello.txt
+                </code>
+                <p class="fragment">
+                    Si nous voulons tout ajouter dans le répertoire, nous pouvons utiliser:
+                </p>
+                <code class="fragment hljs bash">
+                    git add -A
+                </code>
+            </section>
+            <section>
+                <p>
+                    Une nouvelle vérification de l'état devrait renvoyer une réponse différente de celle d'avant.
+                </p>
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+						git status
+
+						On branch master
+
+						Initial commit
+
+						Changes to be committed:
+						  (use "git rm --cached ..." to unstage)
+
+							new file:   hello.txt
+					</code>
+				</pre>
+                <p class="fragment">
+                    Notre fichier est prêt à être <em>"commité"</em>. Le message d'état nous indique également ce qui a changé sur
+                    les fichiers dans la zone de transfert - dans ce cas, son <em>nouveau fichier</em>, mais il peut
+                    être <em>modifié</em> ou <em>supprimé</em>, selon ce qui est arrivé à un fichier depuis le
+                    dernier <code class="git-command">git add</code>.
+                </p>
+            </section>
+            <!-- END Staging-->
         </section>
         <!-- END Section Les bases-->
 
