@@ -86,7 +86,7 @@
 
         <section data-background-transition="zoom">
             <section>
-                <h2>1. Les bases</h2>
+                <h2>I. Les bases</h2>
                 <p>
                     Git est une collection d'utilitaires de ligne de commande qui suivent et enregistrent les
                     modifications dans les fichiers (le plus souvent le code source, mais vous pouvez suivre tout ce que
@@ -146,7 +146,7 @@
                     allons configurer les plus importantes: notre <b>nom d'utilisateur</b> et notre <b>adresse
                     e-mail</b>. Ouvrez un
                     terminal et exécutez ces commandes:
-
+                </p>
                 <pre class="fragment">
 					<code data-trim data-noescape class="hljs bash">
 						# Configuration du nom d'utilisateur
@@ -156,8 +156,6 @@
 						git config --global user.email myEmail@example.com
 					</code>
 				</pre>
-                </p>
-
                 <p class="fragment">
                     Chaque action que nous faisons dans Git aura désormais un tampon avec notre nom et notre adresse. De
                     cette façon, les utilisateurs savent toujours qui a fait quoi et tout est beaucoup plus organisé.
@@ -318,9 +316,9 @@
                 <p class="fragment">
                     Cela va créer un nouveau commit avec toutes les modifications de la zone de transfert (en ajoutant
                     hello.txt). La partie <code class="git-command">-m "Initial commmit"</code> est une description
-					écrite par l'utilisateur qui résume les modifications apportées dans cette validation. Il est
-					considéré comme une bonne pratique de valider souvent et d'écrire toujours des messages de
-					validation significatifs.
+                    écrite par l'utilisateur qui résume les modifications apportées dans cette validation. Il est
+                    considéré comme une bonne pratique de valider souvent et d'écrire toujours des messages de
+                    validation significatifs.
                 </p>
             </section>
             <!-- END Faire un commit-->
@@ -329,21 +327,58 @@
 
         <section data-background-transition="zoom">
             <section>
-                <h2>2. Les dépôts distants</h2>
+                <h2>II. Les dépôts distants</h2>
+                <p>
+                    En ce moment, notre commit est local - il n'existe que dans le dossier <em>.git</em>. Bien qu'un
+                    dépôt
+                    local soit utile en soi, dans la plupart des cas, nous voudrons partager notre travail et le
+                    déployer sur un serveur ou un service d'hébergement de dépôts.
+                </p>
             </section>
+            <section>
+                <h2>1. Connexion à un dépôt distant</h2>
+
+                <p class="fragment">
+                    Afin de télécharger quelque chose sur un dépôt distant, nous devons d'abord établir une
+                    connexion avec lui. Pour les besoins de ce didacticiel, l'adresse de notre référentiel sera
+                    <a href="https://github.com/Mysh3ll/formation-git-ses">https://github.com/Mysh3ll/formation-git-ses</a>.
+                    Nous vous conseillons d'aller de l'avant et de créer votre propre dépôt vide sur
+                    <a href="https://github.com/">GitHub</a>, <a href="https://bitbucket.org/">BitBucket</a> ou tout
+                    autre service. L'enregistrement et la configuration peuvent prendre un certain temps, mais tous les
+                    services proposent de bons guides pas à pas pour vous aider.
+                </p>
+            </section>
+            <section>
+                <p>
+                    Pour lier notre dépôt local à celui sur GitHub, nous exécutons la ligne suivante dans le
+                    terminal:
+                </p>
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+						# Ce n'est qu'un exemple. Remplacez l'URL par votre propre adresse de dépôt.
+						git remote add origin https://github.com/Mysh3ll/formation-git-ses.git
+					</code>
+				</pre>
+                <p class="fragment">
+                    Un projet peut avoir plusieurs dépôts distants en même temps. Pour pouvoir les différencier,
+                    nous leur donnons des noms différents. Traditionnellement, le dépôt distant principal dans git
+                    est appelé <em>origin</em>.
+                </p>
+            </section>
+            <!-- END Connexion à un dépôt distant -->
         </section>
         <!-- END Section Les dépôts distants-->
 
         <section data-background-transition="zoom">
             <section>
-                <h2>3. Les branches</h2>
+                <h2>III. Les branches</h2>
             </section>
         </section>
         <!-- END Section Les branches-->
 
         <section data-background-transition="zoom">
             <section>
-                <h2>4. Notions avancées</h2>
+                <h2>IV. Notions avancées</h2>
             </section>
         </section>
         <!-- END Section Notions avancées-->
