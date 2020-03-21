@@ -58,7 +58,7 @@
                 <h5 class="text-left">2. Les dépôts distants</h5>
                 <ul>
                     <li class="fragment">➔ Se connecter à un dépôt</li>
-                    <li class="fragment">➔ Envoyer son travauil vers un dépôt</li>
+                    <li class="fragment">➔ Envoyer son travail vers un dépôt</li>
                     <li class="fragment">➔ Cloner un dépôt</li>
                     <li class="fragment">➔ Obtenir les modifications à partir d'un dépôt</li>
                 </ul>
@@ -336,7 +336,7 @@
                 </p>
             </section>
             <section>
-                <h2>1. Connexion à un dépôt distant</h2>
+                <h2>1. Se connecter à un dépôt</h2>
 
                 <p class="fragment">
                     Afin de télécharger quelque chose sur un dépôt distant, nous devons d'abord établir une
@@ -365,7 +365,42 @@
                     est appelé <em>origin</em>.
                 </p>
             </section>
-            <!-- END Connexion à un dépôt distant -->
+            <!-- END Se connecter à un dépôt -->
+
+            <section>
+                <h2>2. Envoyer son travail vers un dépôt</h2>
+
+                <p class="fragment">
+                    Il est maintenant temps de transférer nos validations locales sur le serveur. Ce processus est
+                    appelé <b>push</b>, et est effectué chaque fois que nous voulons mettre à jour le dépôt distant.
+                </p>
+                <p class="fragment">
+                    La commande Git pour ce faire est <code class="git-command">git push</code> et prend deux paramètres
+                    - le nom du dépôt distant (nous
+                    avons appelé la nôtre <em>origin</em>) et la branche vers laquelle pousser (<em>master</em> est la
+                    branche par défaut
+                    pour chaque dépôt).
+                </p>
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+						git push origin master
+
+						Counting objects: 3, done.
+						Writing objects: 100% (3/3), 212 bytes | 0 bytes/s, done.
+						Total 3 (delta 0), reused 0 (delta 0)
+						To https://github.com/Mysh3ll/formation-git-ses.git
+						* [new branch]      master -> master
+					</code>
+				</pre>
+            </section>
+            <section>
+                <p>
+                    Selon le service que vous utilisez, vous devrez vous authentifier pour que le <b>push</b> fonctionne. Si tout
+                    a été fait correctement, lorsque vous allez dans votre navigateur Web dans le dépôt distant
+                    créé précédemment, <em>hello.txt</em> devrait y être disponible.
+                </p>
+            </section>
+            <!-- END Envoyer son travail vers un dépôt -->
         </section>
         <!-- END Section Les dépôts distants-->
 
