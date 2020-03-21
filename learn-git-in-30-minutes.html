@@ -414,13 +414,37 @@
                 <code class="fragment hljs bash">
                     git clone https://github.com/Mysh3ll/formation-git-ses.git
                 </code>
-				<br/>
+                <br/>
                 <p class="fragment">
                     Un nouveau dépôt local est automatiquement créé, avec la version de github configurée comme
                     un dépôt distant.
                 </p>
             </section>
             <!-- END Cloner un dépôt -->
+
+            <section>
+                <h2>4. Obtenir les modifications à partir d'un dépôt</h2>
+
+                <p class="fragment">
+                    Si vous apportez des mises à jour à votre dépôt, les utilisateurs peuvent télécharger vos
+                    modifications avec une seule commande - <b>pull</b>:
+                </p>
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+						$ git pull origin master
+
+						From https://github.com/Mysh3ll/formation-git-ses
+						 * branch            master     -> FETCH_HEAD
+						Already up-to-date.
+					</code>
+				</pre>
+                <br/>
+                <p class="fragment">
+                    Étant donné que personne d'autre n'a <em>"commité"</em> depuis le clonage, il n'y a eu aucun
+					changement à télécharger.
+                </p>
+            </section>
+            <!-- END Obtenir les modifications à partir d'un dépôt -->
         </section>
         <!-- END Section Les dépôts distants-->
 
