@@ -669,6 +669,26 @@
                 </p>
             </section>
             <!-- END Vérifier la différence entre les commits -->
+
+            <section>
+                <h2>2. Rétablir un fichier vers une version précédente</h2>
+                <p class="fragment">
+                    Git nous permet de restaurer tout fichier sélectionné comme il était dans un certain
+                    commit. Cela se fait via la commande familière <code class="git-command">git checkout</code>, que
+                    nous avons utilisée plus tôt pour changer de branche, mais qui peut également être utilisée pour
+                    basculer entre les commits (il est assez courant dans Git qu'une commande soit utilisée pour
+                    plusieurs tâches apparemment sans rapport).
+                </p>
+                <p class="fragment">
+                    Dans l'exemple suivant, nous allons prendre <em>hello.txt</em> et inverser tout ce que nous y avons
+                    fait depuis le commit initial. Pour ce faire, nous devons fournir l'id de la validation à laquelle
+                    nous voulons revenir, ainsi que le chemin d'accès complet à notre fichier.
+                </p>
+                <code class="fragment hljs bash">
+                    git checkout 09bd8cc1 hello.txt
+                </code>
+            </section>
+            <!-- END Rétablir un fichier vers une version précédente -->
         </section>
         <!-- END Section Notions avancées-->
     </div>
