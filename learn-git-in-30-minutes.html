@@ -841,10 +841,61 @@ console.log(arr.toString());
                     Comme vous pouvez le voir, ce processus est assez fastidieux et peut devenir extrêmement difficile à
                     gérer dans les grands projets. La plupart des développeurs préfèrent résoudre les conflits à l'aide
                     d'un <a href="https://git-scm.com/download/gui/linux">client GUI</a>, ce qui rend les choses
-                    beaucoup plus faciles. Pour exécuter un client graphique, utilisez <code class="git-command">git mergetool</code>.
+                    beaucoup plus faciles. Pour exécuter un client graphique, utilisez <code class="git-command">git
+                    mergetool</code>.
                 </p>
             </section>
             <!-- END Résoudre des conflits de fusion -->
+
+            <section>
+                <h2>5. Configurer .gitignore</h2>
+                <p class="fragment">
+                    Dans la plupart des projets, il y a des fichiers ou des dossiers entiers que nous ne voulons jamais
+                    <em>"commiter"</em>. Nous pouvons nous assurer qu'ils ne sont pas accidentellement inclus dans notre
+                    <code class="git-command">git add -A</code> en créant un fichier <b>.gitignore</b> :
+                </p>
+                <ol>
+                    <li class="fragment">Créez manuellement un fichier texte appelé <b>.gitignore</b> et enregistrez-le
+                        dans le répertoire de votre projet.
+                    </li>
+                    <li class="fragment">À l'intérieur, répertoriez les noms des fichiers/répertoires à ignorer,
+                        chacun sur une nouvelle ligne.
+                    </li>
+                    <li class="fragment">Le <b>.gitignore</b> lui-même doit être ajouté, validé et poussé, comme il est
+                        comme n'importe quel autre fichier du projet.
+                    </li>
+                </ol>
+            </section>
+            <section>
+                <h5 class="text-left">De bons exemples de fichiers à ignorer:</h5>
+                <ul>
+                    <li class="fragment">fichiers log</li>
+                    <li class="fragment">task runner builds (Gulp, Webpack, Yarn, Npm ...)</li>
+                    <li class="fragment">le dossier <em>node_modules</em> dans les projets node.js</li>
+                    <li class="fragment">dossiers créés par des IDE comme Netbeans et IntelliJ</li>
+                    <li class="fragment">notes personnelles du développeur</li>
+                </ul>
+            </section>
+            <section>
+                <p>
+                    Un <b>.gitignore</b> interdisant tout ce qui précède ressemblera à ceci:
+                </p>
+                <pre class="fragment">
+                    <code data-trim data-noescape class="hljs bash">
+                        *.log
+                        build/
+                        node_modules/
+                        .idea/
+                        my_notes.txt
+                    </code>
+                </pre>
+                <p class="fragment">
+                    La barre oblique à la fin de certaines lignes indique qu'il s'agit d'un dossier et nous ignorons
+                    tout ce qu'il contient de manière récursive. L'astérisque remplit sa fonction habituelle de
+                    caractère générique.
+                </p>
+            </section>
+            <!-- END Configurer .gitignore -->
         </section>
         <!-- END Section Notions avancées-->
     </div>
