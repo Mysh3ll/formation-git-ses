@@ -492,6 +492,35 @@
                 </p>
             </section>
             <!-- END Créer une nouvelle branche -->
+
+            <section>
+                <h2>2. Changer de branche</h2>
+                <p class="fragment">
+                    Maintenant, lorsque nous exécutons <code class="git-command">git branch</code>, nous verrons qu'il y
+                    a deux options disponibles:
+                </p>
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+                        git branch
+                          amazing_new_feature
+                        * master
+					</code>
+				</pre>
+            </section>
+            <section>
+                <p>
+                    <b>Master</b> est la branche actuelle et est marquée d'un astérisque. Cependant, nous voulons
+                    travailler sur nos nouvelles fonctionnalités incroyables, nous devons donc passer à l'autre branche.
+                    Cela se fait avec la commande
+                    <code class="git-command">git checkout</code>, en attendant un paramètre - la branche vers laquelle
+                    basculer.
+                </p>
+                <code class="fragment hljs bash">
+                    git checkout amazing_new_feature
+                </code>
+
+            </section>
+            <!-- END Changer de branche -->
         </section>
         <!-- END Section Les branches-->
 
