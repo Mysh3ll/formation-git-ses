@@ -518,9 +518,54 @@
                 <code class="fragment hljs bash">
                     git checkout amazing_new_feature
                 </code>
-
             </section>
             <!-- END Changer de branche -->
+
+            <section>
+                <h2>3. Fusionner une branche</h2>
+                <p class="fragment">
+                    Notre "nouvelle fonctionnalité incroyable" ne sera qu'un autre fichier texte appelé
+                    <em>feature.txt</em>. Nous allons le créer, l'ajouter et le "commiter".
+                </p>
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+                        # Ajout du nouveau fichier
+                        git add feature.txt
+
+                        # Commit de la nouvelle fonctionnalité
+                        git commit -m "Nouvelle fonctionnalité terminée."
+					</code>
+				</pre>
+                <p class="fragment">
+                    La nouvelle fonctionnalité est terminée, nous pouvons revenir à la branche master.
+                </p>
+                <code class="fragment hljs bash">
+                    git checkout master
+                </code>
+            </section>
+            <section>
+                <p>
+                    Maintenant, si nous ouvrons notre projet dans le navigateur de fichiers, nous remarquerons que <em>feature.txt</em>
+                    a disparu. C'est parce que nous sommes de retour dans la branche master, et ici
+                    <em>feature.txt</em> n'a jamais été créé. Pour l'inclure, nous devons fusionner les deux branches
+                    ensemble avec la commande <code class="git-command">git merge</code>, en appliquant les
+                    modifications apportées dans
+                    <em>amazing_new_feature</em> à la version principale du projet.
+                </p>
+                <code class="fragment hljs bash">
+                    git merge amazing_new_feature
+                </code>
+            </section>
+            <section>
+                <p>
+                    La branche <b>master</b> est maintenant à jour. La branche <em>awesome_new_feature</em> n'est plus nécessaire et
+                    peut être supprimée.
+                </p>
+                <code class="fragment hljs bash">
+                    git branch -d amazing_new_feature
+                </code>
+            </section>
+            <!-- END Fusionner une branche -->
         </section>
         <!-- END Section Les branches-->
 
