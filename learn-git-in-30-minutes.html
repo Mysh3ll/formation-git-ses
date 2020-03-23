@@ -452,7 +452,7 @@
 
         <section data-background-transition="zoom">
             <section>
-                <img class="logo-width20" src="images/branches_.jpg" alt="logo-branches"/>
+                <img class="logo-width20" src="images/branches.jpg" alt="logo-branches"/>
                 <h2>III. Les branches</h2>
 
                 <p class="fragment">
@@ -558,7 +558,8 @@
             </section>
             <section>
                 <p>
-                    La branche <b>master</b> est maintenant à jour. La branche <em>awesome_new_feature</em> n'est plus nécessaire et
+                    La branche <b>master</b> est maintenant à jour. La branche <em>awesome_new_feature</em> n'est plus
+                    nécessaire et
                     peut être supprimée.
                 </p>
                 <code class="fragment hljs bash">
@@ -571,8 +572,103 @@
 
         <section data-background-transition="zoom">
             <section>
+                <img class="logo-width20" src="images/advanced.png" alt="logo-advanced"/>
                 <h2>IV. Notions avancées</h2>
+
+                <br/>
+                <p class="fragment">
+                    Dans la dernière section de cette formation, nous allons jeter un oeil à quelques techniques plus
+                    avancées qui sont très susceptibles d'être utiles.
+                </p>
             </section>
+
+            <section>
+                <h2>1. Vérifier la différence entre les commits</h2>
+                <p class="fragment">
+                    Chaque <em>commit</em> a son identifiant unique sous la forme d'une chaîne de chiffres et de
+                    symboles. Pour voir une liste de tous les <em>commits</em> et leurs identifiants, nous pouvons
+                    utiliser <code class="git-command">git log</code> :
+                </p>
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+                        git log
+
+                        commit ba25c0ff30e1b2f0259157b42b9f8f5d174d80d7
+                        Author: Mysh3ll
+                        Date:   Mon Mar 23 10:56:12 2020 +0100
+
+                            New feature complete
+
+                        commit b10cc1238e355c02a044ef9f9860811ff605c9b4
+                        Author: Mysh3ll
+                        Date:   Sat Mar 21 15:42:10 2020 +0100
+
+                            Added content to hello.txt
+
+                        commit 09bd8cc171d7084e78e4d118a2346b7487dca059
+                        Author: Mysh3ll
+                        Date:   Fri Mar 20 22:56:00 2020 +0100
+
+                            Initial commit
+					</code>
+				</pre>
+            </section>
+            <section>
+                <p>
+                    Comme vous pouvez le voir, les identifiants sont très longs, mais lorsque vous travaillez avec eux,
+                    il n'est pas nécessaire de le copier entièrement - les premiers symboles suffisent généralement.
+                </p>
+                <p class="fragment">
+                    Pour voir ce qui était nouveau dans un commit, nous pouvons lancer <code class="git-command">git
+                    show [commit]</code>:
+                </p>
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+                        git show b10cc123
+
+                        commit b10cc1238e355c02a044ef9f9860811ff605c9b4
+                        Author: Mysh3ll
+                        Date:   Sat Mar 21 15:42:10 2020 +0100
+
+                            Added content to hello.txt
+
+                        diff --git a/hello.txt b/hello.txt
+                        index e69de29..b546a21 100644
+                        --- a/hello.txt
+                        +++ b/hello.txt
+                        @@ -0,0 +1 @@
+                        +Salut les gens !
+					</code>
+				</pre>
+            </section>
+            <section>
+                <p>
+                    Pour voir la différence entre deux <em>commit</em>, nous pouvons utiliser
+                    <code class="git-command">git diff</code> avec la syntaxe <b>[commit-from] .. [commit-to]</b>:
+                </p>
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+                        git diff 09bd8cc..ba25c0ff
+
+                        diff --git a/feature.txt b/feature.txt
+                        new file mode 100644
+                        index 0000000..e69de29
+                        diff --git a/hello.txt b/hello.txt
+                        index e69de29..b546a21 100644
+                        --- a/hello.txt
+                        +++ b/hello.txt
+                        @@ -0,0 +1 @@
+                        +Salut les gens !
+					</code>
+				</pre>
+                <p class="fragment">
+                    Nous avons comparé le premier commit au dernier, nous voyons donc tous les changements qui ont été
+                    apportés. Habituellement, il est plus facile de le faire en utilisant la commande
+                    <code class="git-command">git difftool</code> qui affiche un client graphique montrant toutes les
+                    différences côte à côte.
+                </p>
+            </section>
+            <!-- END Vérifier la différence entre les commits -->
         </section>
         <!-- END Section Notions avancées-->
     </div>
