@@ -730,6 +730,121 @@
                 </p>
             </section>
             <!-- END Corriger un commit -->
+
+            <section>
+                <h2>4. Résoudre des conflits de fusion</h2>
+                <p class="fragment">
+                    Hormis le scénario décrit au point précédent, des conflits apparaissent régulièrement lors de la
+                    fusion de branches ou lors d'un <em>pull</em> du travail de quelqu'un d'autre. Parfois, les conflits
+                    sont gérés automatiquement par git, mais à d'autres moments, la personne qui les traite doit décider
+                    (et généralement choisir) quel code reste et ce qui est supprimé.
+                </p>
+                <p class="fragment">
+                    Regardons un exemple où nous essayons de fusionner deux branches appelées michel_branch et
+                    cedric_branch. Michel et Cédric écrivent dans le même fichier une fonction qui affiche tous les
+                    éléments d'un tableau.
+                </p>
+            </section>
+            <section>
+                <p>
+                    Michel utilise une boucle for:
+                </p>
+                <pre>
+                    <code data-trim data-noescape class="fragment hljs javascript">
+// Utilisation d'une boucle for pour console.log() le contenu.
+for(let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+}
+                    </code>
+                </pre>
+                <p class="fragment">
+                    Cédric préfère un forEach:
+                </p>
+                <pre>
+                    <code data-trim data-noescape class="fragment hljs javascript">
+// Utilisation d'un forEach pour console.log() le contenu.
+arr.forEach(item => console.log(item));
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>
+                    Ils <em>commit</em> tous les deux leur code sur leur branche respective. Maintenant, s'ils essaient
+                    de fusionner les deux branches, ils verront le message d'erreur suivant:
+                </p>
+                <pre>
+                    <code data-trim data-noescape class="fragment hljs bash">
+                        git merge cedric_branch
+
+                        Auto-merging print_array.js
+                        CONFLICT (content): Merge conflict in print_array.js
+                        Automatic merge failed; fix conflicts and then commit the result.
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>
+                    Git n'a pas pu fusionner les branches automatiquement, donc maintenant c'est aux développeurs de
+                    résoudre manuellement le conflit. S'ils ouvrent le fichier où réside le conflit, ils verront que Git
+                    a inséré un marqueur sur les lignes en conflit.
+                </p>
+                <pre class="fragment">
+                    <code data-trim data-noescape class="hljs bash">
+<<<<<<< HEAD
+                    </code>
+                    <code data-trim data-noescape class="hljs javascript multiple-code">
+// Utilisation d'une boucle for pour console.log() le contenu.
+for(let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+}
+                    </code>
+                    <code data-trim data-noescape class="hljs bash">
+=======
+                    </code>
+                    <code data-trim data-noescape class="hljs javascript multiple-code">
+// Utilisation d'un forEach pour console.log() le contenu.
+arr.forEach(item => console.log(item));
+>>>>>>> Cedric's commit.
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>
+                    Au-dessus du <b>=====</b> nous avons le commit <b>HEAD</b> actuel, et en dessous le conflit. De
+                    cette façon, nous
+                    pouvons voir clairement les différences et décider quelle est la meilleure version, ou en écrire une
+                    nouvelle ensemble. Dans cette situation, nous optons pour ce dernier et réécrivons le tout, en
+                    supprimant les marqueurs pour faire savoir à Git que nous avons terminé.
+                </p>
+                <pre>
+                    <code data-trim data-noescape class="fragment hljs javascript">
+// Ne pas utiliser boucle for ou forEach.
+// Utilisez Array.toString () pour console.log() le contenu.
+console.log(arr.toString());
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <p>
+                    Lorsque tout est corrigé, une validation de fusion doit être effectuée pour terminer le processus.
+                </p>
+                <pre class="fragment">
+					<code data-trim data-noescape class="hljs bash">
+                        # Ajout de toutes les modifications, y compris les suppressions
+                        git add -A
+
+                        # Commit de la résolution du conflit
+                        git commit -m "Conflit console.log() `arr` résolu."
+					</code>
+				</pre>
+                <p class="fragment">
+                    Comme vous pouvez le voir, ce processus est assez fastidieux et peut devenir extrêmement difficile à
+                    gérer dans les grands projets. La plupart des développeurs préfèrent résoudre les conflits à l'aide
+                    d'un <a href="https://git-scm.com/download/gui/linux">client GUI</a>, ce qui rend les choses
+                    beaucoup plus faciles. Pour exécuter un client graphique, utilisez <code class="git-command">git mergetool</code>.
+                </p>
+            </section>
+            <!-- END Résoudre des conflits de fusion -->
         </section>
         <!-- END Section Notions avancées-->
     </div>
