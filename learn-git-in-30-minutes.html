@@ -689,6 +689,47 @@
                 </code>
             </section>
             <!-- END Rétablir un fichier vers une version précédente -->
+
+            <section>
+                <h2>3. Corriger un commit</h2>
+                <p class="fragment">
+                    Si vous remarquez que vous avez fait une faute de frappe dans le message de votre commit, ou que
+                    vous avez oublié d'ajouter un fichier et que vous le voyez juste après le commit, vous pouvez
+                    facilement résoudre ce problème avec <code class="git-command">git commit --amend</code>. Cela
+                    ajoutera tout du dernier commit à la zone de transit et tentera de faire un nouveau commit. Cela
+                    vous donne la possibilité de corriger le message de votre commit ou d'ajouter d'autres fichiers à la
+                    zone de transfert.
+                </p>
+                <p class="fragment">
+                    Pour les correctifs plus complexes qui ne figurent pas dans le dernier commit (ou si vous avez déjà
+                    poussé vos modifications), vous devez utiliser <code class="git-command">git revert</code>. Cela
+                    prendra toutes les modifications introduites par un commit, les inversera et créera un nouveau
+                    commit qui sera exactement le contraire.
+                </p>
+            </section>
+            <section>
+                <p>
+                    Le dernier commit est accessible par l'alias <b>HEAD</b>.
+                </p>
+                <code class="fragment hljs bash">
+                    git revert HEAD
+                </code>
+                <br/>
+                <p class="fragment">
+                    Pour les autres validations, il est préférable d'utiliser un identifiant.
+                </p>
+                <code class="fragment hljs bash">
+                    git revert b10cc123
+                </code>
+                <br/>
+                <p class="fragment">
+                    Lorsque vous rétablissez des commits plus anciens, gardez à l'esprit que les conflits de
+                    fusion sont très susceptibles d'apparaître. Cela se produit lorsqu'un fichier a été modifié par un
+                    autre commit plus récent, et maintenant Git ne peut plus trouver les bonnes lignes à restaurer, car
+                    elles ne sont plus là.
+                </p>
+            </section>
+            <!-- END Corriger un commit -->
         </section>
         <!-- END Section Notions avancées-->
     </div>
