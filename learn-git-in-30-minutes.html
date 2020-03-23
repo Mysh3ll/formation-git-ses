@@ -86,6 +86,7 @@
 
         <section data-background-transition="zoom">
             <section>
+                <img class="logo-width20" src="images/git.png" alt="logo-git"/>
                 <h2>I. Les bases</h2>
                 <p>
                     Git est une collection d'utilitaires de ligne de commande qui suivent et enregistrent les
@@ -327,6 +328,7 @@
 
         <section data-background-transition="zoom">
             <section>
+                <img class="logo-width20" src="images/remotes.jpg" alt="logo-remotes"/>
                 <h2>II. Les dépôts distants</h2>
                 <p>
                     En ce moment, notre commit est local - il n'existe que dans le dossier <em>.git</em>. Bien qu'un
@@ -441,7 +443,7 @@
                 <br/>
                 <p class="fragment">
                     Étant donné que personne d'autre n'a <em>"commité"</em> depuis le clonage, il n'y a eu aucun
-					changement à télécharger.
+                    changement à télécharger.
                 </p>
             </section>
             <!-- END Obtenir les modifications à partir d'un dépôt -->
@@ -450,8 +452,46 @@
 
         <section data-background-transition="zoom">
             <section>
+                <img class="logo-width20" src="images/branches_.jpg" alt="logo-branches"/>
                 <h2>III. Les branches</h2>
+
+                <p class="fragment">
+                    Lors du développement d'une nouvelle fonctionnalité, il est considéré comme une bonne pratique de
+                    travailler sur une copie du projet d'origine, appelée <em>branche</em>. Les branches ont leur propre
+                    historique et isolent leurs modifications les unes des autres, jusqu'à ce que vous décidiez de les
+                    fusionner à nouveau. Cela se fait pour deux raisons:
+                </p>
             </section>
+            <section>
+                <ul>
+                    <li>➔ Une version stable et déjà fonctionnelle du code ne sera pas rompue.</li>
+                    <li class="fragment">➔ De nombreuses fonctionnalités peuvent être développées en toute sécurité
+                        simultanément par différentes personnes.
+                    </li>
+                    <li class="fragment">➔ Les développeurs peuvent travailler sur leur propre branche, sans risque de
+                        modification de leur base de code en raison du travail de quelqu'un d'autre.
+                    </li>
+                    <li class="fragment">➔ En cas de doute sur ce qui est le mieux, plusieurs versions de la même
+                        fonctionnalité peuvent être développées sur des branches distinctes, puis comparées.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>1. Créer une nouvelle branche</h2>
+                <p class="fragment">
+                    La branche par défaut de chaque dépôt est appelée <b>master</b>. Pour créer des branches
+                    supplémentaires, utilisez la commande <code class="git-command">git branch "maBranche"</code> :
+                </p>
+                <code class="fragment hljs bash">
+                    git branch amazing_new_feature
+                </code>
+                <br/>
+                <p class="fragment">
+                    Cela crée simplement la nouvelle branche, qui à ce stade est exactement la même que notre
+                    <em>master</em>.
+                </p>
+            </section>
+            <!-- END Créer une nouvelle branche -->
         </section>
         <!-- END Section Les branches-->
 
